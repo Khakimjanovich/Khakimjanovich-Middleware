@@ -1,0 +1,36 @@
+{
+  "name": "khakimjanovich/middleware",
+  "description": "A middleware for server to server connection",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "khkaimjanovich",
+      "email": "yunusalikhakimjanovich@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.17",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "INBRAIN\\OMP\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "INBRAIN\\OMP\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "INBRAIN\\OMP\\Providers\\AuthMiddlewareServiceProvider"
+      ]
+    }
+  }
+}
