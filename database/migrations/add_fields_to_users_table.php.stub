@@ -8,15 +8,10 @@ class AddFieldsToUsersTable extends Migration
 {
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->dropColumn('id');
-            $table->dropColumn('name');
-            $table->dropColumn('email');
-            $table->dropColumn('email_verified_at');
-            $table->dropColumn('password');
-            $table->dropColumn('remember_token');
-            $table->foreignId('id');
+        Schema::dropIfExists('users');
 
+        Schema::create('users', function (Blueprint $table) {
+            $table->foreignId('id');
             $table->timestamps();
         });
     }
