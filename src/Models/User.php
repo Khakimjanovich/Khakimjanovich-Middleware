@@ -15,6 +15,6 @@ class User extends Authenticatable
 
     public function getCredentialsAttribute(): array
     {
-        return Http::withHeaders(['Authorization' => 'Bearer ' . request()->bearerToken()])->get(config('inbrain.auth_server') . '/v1/me')->json();
+        return Http::withHeaders(['Key' => config('inbrain.auth_key')])->get(config('inbrain.auth_server') . '/v1/users/' . $this->id)->json();
     }
 }
